@@ -629,3 +629,43 @@ translateX(150px)
 rotate(720deg);
 opacity:0;
 }
+/* ==========================
+   FIREWORKS
+========================== */
+
+.firework{
+position:fixed;
+width:8px;
+height:8px;
+background:gold;
+border-radius:50%;
+pointer-events:none;
+animation:explode 1.5s linear forwards;
+z-index:99999;
+}
+
+@keyframes explode{
+
+0%{
+transform:scale(1);
+opacity:1;
+box-shadow:
+0 0 10px gold,
+0 0 20px gold;
+}
+
+100%{
+transform:scale(20);
+opacity:0;
+box-shadow:
+-80px -80px gold,
+80px -80px gold,
+-80px 80px gold,
+80px 80px gold,
+0 -100px gold,
+0 100px gold,
+100px 0 gold,
+-100px 0 gold;
+}
+
+}
