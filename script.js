@@ -75,3 +75,58 @@ document.body.appendChild(star);
 }
 
 }
+// ==========================
+// HEARTS
+// ==========================
+
+function createHearts(){
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDelay=Math.random()*3+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+}
+
+// ==========================
+// PETALS
+// ==========================
+
+function createPetals(){
+
+for(let i=0;i<35;i++){
+
+let petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌹";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDelay=Math.random()*4+"s";
+
+document.body.appendChild(petal);
+
+setTimeout(()=>{
+petal.remove();
+},11000);
+
+}
+
+}
