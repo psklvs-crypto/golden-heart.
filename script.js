@@ -29,21 +29,27 @@ window.onload = () => {
 
 start.onclick = () => {
 
-    start.innerHTML="✨ Opening Royal Palace...";
+start.disabled = true;
 
-    start.disabled=true;
+start.innerHTML = "✨ Opening Royal Palace...";
 
-    document.body.style.transition="2s";
+createSparkles();
 
-    document.body.style.background="#000";
+// Open palace doors
 
-    createSparkles();
+document.getElementById("leftDoor").style.left = "0";
 
-    setTimeout(()=>{
+document.getElementById("rightDoor").style.right = "0";
 
-        alert("👑 Welcome Hemadarshan!");
+document.getElementById("goldLight").style.width = "100%";
 
-    },2500);
+document.getElementById("goldLight").style.opacity = "1";
+
+setTimeout(() => {
+
+document.querySelector(".glass").style.opacity = "0";
+
+},1800);
 
 }
 
