@@ -29,27 +29,26 @@ window.onload = () => {
 
 start.onclick = () => {
 
-start.disabled = true;
+    start.disabled = true;
 
-start.innerHTML = "✨ Opening Royal Palace...";
+    start.innerHTML = "✨ Opening Royal Palace...";
 
-createSparkles();
+    createSparkles();
 
-// Open palace doors
+    // Show the doors first
+    document.getElementById("leftDoor").style.left = "0";
+    document.getElementById("rightDoor").style.right = "0";
 
-document.getElementById("leftDoor").style.left = "0";
+    document.getElementById("goldLight").style.width = "100%";
+    document.getElementById("goldLight").style.opacity = "1";
 
-document.getElementById("rightDoor").style.right = "0";
+    // Wait 1 second, then open them
+    setTimeout(() => {
 
-document.getElementById("goldLight").style.width = "100%";
+        document.getElementById("leftDoor").style.left = "-50%";
+        document.getElementById("rightDoor").style.right = "-50%";
 
-document.getElementById("goldLight").style.opacity = "1";
-
-setTimeout(() => {
-
-document.querySelector(".glass").style.opacity = "0";
-
-},1800);
+    },1000);
 
 }
 
