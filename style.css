@@ -1,0 +1,487 @@
+/* ===========================
+   GOLDEN HEART
+   Premium Luxury Theme
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top,#1a1200 0%,#090909 45%,#000 100%);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+/* ===========================
+        LOADER
+=========================== */
+
+#loader{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    background:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:99999;
+
+}
+
+.loader-circle{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    border:4px solid rgba(255,215,0,.2);
+
+    border-top:4px solid gold;
+
+    animation:spin 2s linear infinite;
+
+}
+
+#loader h1{
+
+    margin-top:30px;
+
+    font-size:40px;
+
+    color:gold;
+
+    font-family:'Cinzel',serif;
+
+    letter-spacing:5px;
+
+}
+
+#loader p{
+
+    margin-top:15px;
+
+    color:#ddd;
+
+}
+
+/* ===========================
+        STARS
+=========================== */
+
+#stars{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100%;
+
+    background-image:
+radial-gradient(white 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.18;
+
+    animation:starsMove 120s linear infinite;
+
+}
+
+/* ===========================
+        HERO
+=========================== */
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+.glass{
+
+    width:90%;
+
+    max-width:850px;
+
+    padding:70px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,215,0,.3);
+
+    text-align:center;
+
+    box-shadow:
+
+    0 0 50px rgba(255,215,0,.12),
+
+    inset 0 0 30px rgba(255,255,255,.04);
+
+}
+
+.glass h3{
+
+    color:gold;
+
+    letter-spacing:6px;
+
+    font-family:'Cinzel';
+
+    margin-bottom:25px;
+
+}
+
+.glass h1{
+
+    font-size:70px;
+
+    font-family:'Cinzel';
+
+    color:gold;
+
+    line-height:1.1;
+
+    text-shadow:
+
+    0 0 10px gold,
+
+    0 0 25px gold,
+
+    0 0 50px rgba(255,215,0,.6);
+
+}
+
+.glass h2{
+
+    margin-top:25px;
+
+    font-size:42px;
+
+    color:white;
+
+}
+
+.glass p{
+
+    margin-top:35px;
+
+    line-height:1.9;
+
+    color:#dddddd;
+
+    font-size:18px;
+
+}
+
+/* ===========================
+        BUTTON
+=========================== */
+
+#start{
+
+    margin-top:45px;
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:19px;
+
+    cursor:pointer;
+
+    background:linear-gradient(45deg,#FFD700,#F4C430,#FFD700);
+
+    color:black;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+#start:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+
+    0 0 20px gold,
+
+    0 0 45px gold,
+
+    0 0 80px rgba(255,215,0,.6);
+
+}
+/* =====================================
+      GOLDEN HEART PREMIUM ANIMATIONS
+======================================*/
+
+/* Floating glow */
+body::before{
+content:"";
+position:fixed;
+top:-20%;
+left:-20%;
+width:140%;
+height:140%;
+background:
+radial-gradient(circle,
+rgba(255,215,0,.08),
+transparent 60%);
+animation:rotateGlow 18s linear infinite;
+pointer-events:none;
+z-index:-2;
+}
+
+/* Luxury glow behind card */
+.glass::before{
+content:"";
+position:absolute;
+inset:-2px;
+border-radius:35px;
+padding:2px;
+background:linear-gradient(
+45deg,
+transparent,
+rgba(255,215,0,.5),
+transparent,
+rgba(255,255,255,.2)
+);
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+opacity:.8;
+animation:borderMove 8s linear infinite;
+}
+
+.glass{
+position:relative;
+overflow:hidden;
+animation:cardFloat 6s ease-in-out infinite;
+}
+
+/* Golden title animation */
+
+.glass h1{
+
+animation:titleGlow 3s ease-in-out infinite;
+
+}
+
+/* Button animation */
+
+#start{
+
+animation:pulseButton 2.5s infinite;
+
+}
+
+/* Stars twinkle */
+
+#stars{
+
+animation:
+starsMove 120s linear infinite,
+twinkle 3s ease-in-out infinite;
+
+}
+
+/* Animations */
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-500px);
+
+}
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.15;
+
+}
+
+50%{
+
+opacity:.35;
+
+}
+
+}
+
+@keyframes titleGlow{
+
+0%,100%{
+
+text-shadow:
+0 0 10px gold,
+0 0 25px gold;
+
+}
+
+50%{
+
+text-shadow:
+0 0 25px gold,
+0 0 60px gold,
+0 0 100px gold;
+
+}
+
+}
+
+@keyframes pulseButton{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+@keyframes rotateGlow{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes borderMove{
+
+100%{
+
+filter:hue-rotate(360deg);
+
+}
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.glass{
+
+padding:35px;
+
+width:92%;
+
+}
+
+.glass h1{
+
+font-size:42px;
+
+}
+
+.glass h2{
+
+font-size:28px;
+
+}
+
+.glass p{
+
+font-size:16px;
+
+}
+
+#start{
+
+width:100%;
+
+}
+
+}
