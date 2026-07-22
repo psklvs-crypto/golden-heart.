@@ -34,7 +34,9 @@ start.onclick = () => {
     start.innerHTML = "✨ Opening Royal Palace...";
 
     createHearts();
-createPetals();
+    createPetals();
+    createFireworks();
+    createBalloons();
 
     // Show the doors first
     document.getElementById("leftDoor").style.left = "0";
@@ -127,6 +129,68 @@ document.body.appendChild(petal);
 setTimeout(()=>{
 petal.remove();
 },11000);
+
+}
+
+}
+// ==========================
+// FIREWORKS
+// ==========================
+
+function createFireworks(){
+
+for(let i=0;i<8;i++){
+
+let fire=document.createElement("div");
+
+fire.className="firework";
+
+fire.style.left=Math.random()*90+"vw";
+
+fire.style.top=Math.random()*70+"vh";
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},1600);
+
+}
+
+}
+function createBalloons(){
+
+for(let i=0;i<20;i++){
+
+let b=document.createElement("div");
+
+b.innerHTML="🎈";
+
+b.style.position="fixed";
+
+b.style.left=Math.random()*100+"vw";
+
+b.style.bottom="-50px";
+
+b.style.fontSize="35px";
+
+b.style.transition="8s linear";
+
+document.body.appendChild(b);
+
+setTimeout(()=>{
+
+b.style.bottom="110vh";
+
+},100);
+
+setTimeout(()=>{
+
+b.remove();
+
+},9000);
 
 }
 
