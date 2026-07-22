@@ -208,12 +208,61 @@ const pass=document.getElementById("passwordInput").value;
 
 if(pass==="Vanushka"){
 
-alert("✨ Correct Password!");
+document.getElementById("passwordPage").style.display="none";
+document.getElementById("lettersPage").style.display="block";
 
 }else{
 
 alert("Wrong Password!");
 
 }
+
+}
+const messages = [
+"Happy Birthday! May your 16th year be full of happiness.",
+"You always know how to make me smile.",
+"Thank you for being part of my memories.",
+"I hope today brings you lots of joy.",
+"Keep chasing your dreams.",
+"You deserve all the happiness in the world.",
+"May this year be your best one yet.",
+"Never stop believing in yourself.",
+"Keep smiling every day.",
+"You are stronger than you know.",
+"I'll always treasure our memories.",
+"Enjoy every moment of your special day.",
+"Wishing you success and good health.",
+"Thank you for being you.",
+"Have an amazing birthday!",
+"This surprise was made especially for you. 💖"
+];
+
+const grid = document.getElementById("lettersGrid");
+
+messages.forEach((msg,index)=>{
+
+const card=document.createElement("div");
+
+card.className="letter";
+
+card.innerHTML="💌<br>"+(index+1);
+
+card.onclick=()=>{
+
+document.getElementById("letterPopup").style.display="flex";
+
+document.getElementById("letterTitle").innerHTML="Letter "+(index+1);
+
+document.getElementById("letterText").innerHTML=msg;
+
+}
+
+grid.appendChild(card);
+
+});
+
+document.getElementById("closeLetter").onclick=()=>{
+
+document.getElementById("letterPopup").style.display="none";
 
 }
