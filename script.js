@@ -37,6 +37,11 @@ start.onclick = () => {
     createPetals();
     createFireworks();
     createBalloons();
+    setTimeout(()=>{
+
+document.getElementById("passwordPage").style.display="flex";
+
+},3000);
 
     // Show the doors first
     document.getElementById("leftDoor").style.left = "0";
@@ -191,6 +196,23 @@ setTimeout(()=>{
 b.remove();
 
 },9000);
+
+}
+
+}
+const unlockBtn=document.getElementById("unlockBtn");
+
+unlockBtn.onclick=()=>{
+
+const pass=document.getElementById("passwordInput").value;
+
+if(pass==="Vanushka"){
+
+alert("✨ Correct Password!");
+
+}else{
+
+alert("Wrong Password!");
 
 }
 
