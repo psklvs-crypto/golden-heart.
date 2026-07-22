@@ -535,7 +535,7 @@ box-shadow:
 
 #leftDoor{
 
-left:-50%;
+left:0;
 
 border-right:4px solid gold;
 
@@ -543,7 +543,7 @@ border-right:4px solid gold;
 
 #rightDoor{
 
-right:-50%;
+right:0;
 
 border-left:4px solid gold;
 
