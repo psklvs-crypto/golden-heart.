@@ -33,7 +33,8 @@ start.onclick = () => {
 
     start.innerHTML = "✨ Opening Royal Palace...";
 
-    createSparkles();
+    createHearts();
+createPetals();
 
     // Show the doors first
     document.getElementById("leftDoor").style.left = "0";
